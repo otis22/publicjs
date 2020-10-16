@@ -1,5 +1,3 @@
-    // TODO: add domReady
-    var button = document.getElementsByClassName('vmfile-import-button');
     function openPopup(me) {
         var params = `scrollbars=no,resizable=no,status=no,location=no,toolbar=no,menubar=no,
 width=514,height=328,left=-1000,top=-1000`;
