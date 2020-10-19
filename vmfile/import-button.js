@@ -26,13 +26,13 @@ width=514,height=328,left=-1000,top=-1000`;
     window.importRun = function(domain_name="") {
 
         //validate input
-        if(domain_name == "") {
+        if (domain_name == "") {
             var input = window.popup.document.getElementById("url").value;
             regex1 = new RegExp('[\\/\\.]');
             regex2 = new RegExp('https:\/\/.*.');
-            if(!regex1.test(input)) {
+            if (!regex1.test(input)) {
                 domain_name = input;
-            } else if(regex2.test(input)) {
+            } else if (regex2.test(input)) {
                 domain_name = input.split('//')[1].split('.')[0];
             } else {
                 window.popup.alert("Неверный ввод");
