@@ -25,12 +25,26 @@ width=514,height=328,left=-1000,top=-1000`;
     }
     window.importRun = function(domain_name="") {
 
-	function vetmanagerUrl(domain_name) {
+        //validate input
+        if(domain_name == "") {
+            var input = window.popup.document.getElementById("url").value;
+            regex1 = new RegExp('[\\/\\.]');
+            regex2 = new RegExp('https:\/\/.*.');
+            if(!regex1.test(input)) {
+                domain_name = input;
+            } else if(regex2.test(input)) {
+                domain_name = input.split('//')[1].split('.')[0];
+            } else {
+                window.popup.alert("Неверный ввод");
+                return false;
+            }
+        }
+        function vetmanagerUrl(domain_name) {
             var request = new XMLHttpRequest();
             var result = '';
-            request.open('Get', 'https://billing-api.vetmanager.cloud/host/'+domain_name, false);
-            request.onreadystatechange = function() {
-                if(request.readyState === 4) {
+            request.open('Get', 'https://billing-api.vetmanager.cloud/host/' + domain_name, false);
+            request.onreadystatechange = function () {
+                if (request.readyState === 4) {
                     switch (request.status) {
                         case 200:
                             var response = JSON.parse(request.response);
@@ -46,13 +60,10 @@ width=514,height=328,left=-1000,top=-1000`;
             return result
         }
 
-        if(domain_name == "") {
-            var domain_name = window.popup.document.getElementById("url").value.split('//')[1].split('.')[0];
-        }
         var vetmanagerUrl = vetmanagerUrl(domain_name);
-        if(window.popup !== undefined) {
+        if (window.popup !== undefined) {
             window.popup.close();
         }
-        console.log(vetmanagerUrl+"/import_content.php?type="+window.importType+"&url="+window.importUrl)
-        window.location = vetmanagerUrl+"/import_content.php?type="+window.importType+"&url="+window.importUrl;
+        console.log(vetmanagerUrl + "/import_content.php?type=" + window.importType + "&url=" + window.importUrl)
+        window.location = vetmanagerUrl + "/import_content.php?type=" + window . importType + "&url=" + window.importUrl;
     }
