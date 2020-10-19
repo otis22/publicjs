@@ -20,12 +20,14 @@ For using import file button:
 <script src="https://cdn.jsdelivr.net/gh/otis22/publicjs/vmfile/import.js"></script>
 ```
 
-2. Insert button with for file import 
+1. Insert button with for file import 
 
 ```
 <button onclick="openPopup(this)" data-type="special_studies" data-url="https://trello-attachments.s3.amazonaws.com/5894c09e496fceb170144b05/5b558e4d1acb88c979ba84ca/d5a167fa56a6c979a819cdefa3c76f8d/report_83.vmrc">Импорт</button>
 ```
 
-onclick="openPopup(this)" - it is required
-data-type="special_studies" - for special studies templates
-data-url="http://" - url with file 
+Where
+
+* onclick="openPopup(this)" - it is required
+* data-type="special_studies" - for special studies templates
+* data-url="http://" - url with file 
