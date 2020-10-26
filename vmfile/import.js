@@ -17,7 +17,7 @@ width=514,height=328,left=-1000,top=-1000`;
             <p>Введите url адрес вашей программы или доменное имя.</p>
             <img src="https://i.ibb.co/ZSM3syp/image.gif" style="width:100%" alt="где взять ссылку?">
             <form action="#" align="center" onsubmit="return window.opener.importRun();">
-                <input type="text" size="26" id="url" pattern="https://.*.vetmanager.ru.*" placeholder="https://xxx.vetmanager.ru/index.php"> <br>
+                <input type="text" size="26" id="url" placeholder="https://xxx.vetmanager.ru/index.php"> <br>
                 <button id="import" type="submit">Импортировать</button>
             </form>
         `;
