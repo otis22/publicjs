@@ -65,5 +65,6 @@ width=514,height=328,left=-1000,top=-1000`;
             window.popup.close();
         }
         console.log(vetmanagerUrl + "/import_content.php?type=" + window.importType + "&url=" + window.importUrl)
-        window.location = vetmanagerUrl + "/import_content.php?type=" + window . importType + "&url=" + window.importUrl;
+        var win = window.open(vetmanagerUrl + "/import_content.php?type=" + window . importType + "&url=" + window.importUrl, '_blank');
+        win.focus();
     }
