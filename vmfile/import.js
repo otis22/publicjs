@@ -8,10 +8,11 @@ function openPopup(me) {
     }
 
     window.popup = document.createElement("div");
+    window.popup.style.cssText = 'position: fixed; top: 50%; left: 50%;';
     var newWindow = window.popup;
     newWindow.innerHTML = `
       <div class="body-blackout" style="
-         position: absolute;
+         position: fixed;
          z-index: 1010;
          left: 0;
          top: 0;
@@ -20,7 +21,7 @@ function openPopup(me) {
          background-color: rgba(0, 0, 0, .65);
          "></div>
       <div style="
-         height: 365px;
+         height: 390px;
          width: 650px;
          background-color: #fff;
          position: absolute;
