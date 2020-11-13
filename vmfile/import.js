@@ -101,6 +101,6 @@ window.importRun = function(domain_name = "") {
 var buttons = document.getElementsByClassName("vm-import-button");
 var arr = Array.prototype.slice.call(buttons);
 arr.forEach(function(button) {
-    button.onclick = function(event) { return openPopup(this) };
+    button.addEventListener('click', function() { openPopup(button) });
 });
 
