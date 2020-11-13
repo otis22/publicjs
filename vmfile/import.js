@@ -97,3 +97,10 @@ window.importRun = function(domain_name = "") {
     var win = window.open(vetmanagerUrl + "/import_content.php?type=" + window.importType + "&url=" + window.importUrl, '_blank');
     win.focus();
 }
+
+var buttons = document.getElementsByClassName("vm-import-button");
+var arr = Array.prototype.slice.call(buttons);
+arr.forEach(function(button) {
+    button.onclick = function(event) { return openPopup(this) };
+});
+
