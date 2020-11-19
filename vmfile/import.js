@@ -1,12 +1,28 @@
+function Domain(domainName) {
+    return {
+        asString: function () {
+            if (domainName) {
+                return domainName;
+            }
+            var urlParams = new URLSearchParams(window.location.search);
+            if (urlParams.has('domain')) {
+                return urlParams.get('domain')
+            }
+            throw new Error("Domain name is empty!");
+        }
+    }
+}
+
 function openPopup(me) {
     window.importType = me.getAttribute("data-type")
     window.importUrl = me.getAttribute("data-url")
-
-    if (me.getAttribute('data-domain')) {
-        window.importRun(me.getAttribute('data-domain'));
+    var domain = new Domain(me.getAttribute('data-domain'));
+    try {
+        window.importRun(domain.asString());
         return;
+    } catch (e) {
+        console.log('Domain is empty. We need ask domain name from user.')
     }
-
     window.popup = document.createElement("div");
     window.popup.style.cssText = 'position: fixed; top: 50%; left: 50%;';
     var newWindow = window.popup;
