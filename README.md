@@ -2,7 +2,11 @@
 
 ![jsDelivrBadge](https://data.jsdelivr.com/v1/package/gh/otis22/publicjs/badge)
 
-Now I am using this repo for publish my small scripts with https://www.jsdelivr.com/
+I am using this repo for publish my small scripts with https://www.jsdelivr.com/
+
+### Vetmanager import file button 
+
+It is small script for provide importing reports and templates from your own web page into Vetmanager 
 
 For using import file button: 
 
