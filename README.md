@@ -27,3 +27,28 @@ Where
 * class="vm-import-button" - it is required
 * data-type="special_studies" - for special studies templates, can be 'special_studies' or 'report'
 * data-url="http://" - url for template or exported report file
+
+
+### Vetmanager field name generator for laboratory templates 
+
+Generator valid Laboratory module field name. Put following code on your page.
+
+```
+<input type="text" class="vm-field-name-input" />
+<div class="vm-field-name-result" ></div>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/otis22/publicjs/vmservices/field-name-generator.js"></script>
+```
+
+### Carrotquest event generator 
+
+Generate event when element clicked 
+
+```
+<button class="carrotquest-click-event" data-event="My cool event"></button>
+```
+
+For track event with data put json to data-event-data
+
+```
+<button class="carrotquest-click-event" data-event="My event with data" data-event-json='{"param":"value"}'></button>
+```
