@@ -1,6 +1,6 @@
 function TrackedElement(el) {
 	let event_name = function () {
-		event = el.getAttribute('data-event');
+		let event = el.getAttribute('data-event');
 		if (!event) {
 			throw new Error('Carrot event not defined for ' + el.outerHTML)
 		}
@@ -8,13 +8,14 @@ function TrackedElement(el) {
 	}
 	let event_data = () => JSON.parse(el.getAttribute('data-event-json')) || {}
 	let onClick = function () {
-		if (window.carrotquest)	{
-			carrotquest.track(
+		let trackSystem = window.dashly ?? window.carrotquest;
+		if (trackSystem) {
+			trackSystem.track(
 				event_name(),
 				event_data()
 			);
 		} else {
-			throw "carrotquest undefined on this page";
+			throw "carrotquest or dashly undefined on this page";
 		}	
 	}
 	return {
@@ -25,6 +26,9 @@ function TrackedElement(el) {
 }
 
 document.addEventListener("DOMContentLoaded", function() {	
-	let elements = document.getElementsByClassName("carrotquest-click-event");
-	[...elements].forEach((el) => (new TrackedElement(el)).watch());
+	let carrotElements = document.getElementsByClassName("carrotquest-click-event");
+	let dashlyElements = document.getElementsByClassName("dashly-click-event");
+	[...carrotElements, ...dashlyElements].forEach(
+		(el) => (new TrackedElement(el)).watch()
+	);
 });

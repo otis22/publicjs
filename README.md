@@ -39,7 +39,7 @@ Generator valid Laboratory module field name. Put following code on your page.
 <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/otis22/publicjs/vmservices/field-name-generator.js"></script>
 ```
 
-### Carrotquest event generator 
+### Carrotquest or Dashly event generator 
 
 Generate event on elements clicked 
 
@@ -49,7 +49,7 @@ Put following script on page
 <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/otis22/publicjs/carrotquest/click-event.js"></script>
 ```
 
-Add class `carrotquest-click-event` for watching elements and set event name to `data-event`
+Add class `carrotquest-click-event` or `dashly-click-event`  for watching elements and set event name to `data-event`
 
 ```
 <button class="carrotquest-click-event" data-event="My cool event"></button>
