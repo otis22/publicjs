@@ -46,7 +46,7 @@ Generate event on elements clicked
 Put following script on page
 
 ```
-<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/otis22/publicjs/carrotquest/click-event.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/otis22/publicjs@latest/carrotquest/click-event.js"></script>
 ```
 
 Add class `carrotquest-click-event` or `dashly-click-event`  for watching elements and set event name to `data-event`
